@@ -1,95 +1,45 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <main>
+      <h1>H1 Title</h1>
+      <h2>H2 Title</h2>
+      <h3>H3 Title</h3>
+      <h4>H4 Title</h4>
+      <h5>H5 Title</h5>
+      <p>Text</p>
+      <div className="box">
+        <h1>Box</h1>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+          <em>Lorem ipsum</em> dolor sit amet, consectetur adipiscing elit.
+          Curabitur sagittis, mi eget tempus bibendum, turpis tortor viverra
+          augue, aliquet sagittis magna odio a lectus. Nulla ut urna varius,
+          molestie lectus non, sodales nunc. Cras consectetur dignissim purus,
+          sit amet ullamcorper purus viverra sit amet. Cras ultrices ultricies
+          nisl vel pulvinar. In quis augue quis odio lobortis fermentum. Sed
+          lacinia nibh nisl, non consectetur augue dignissim vitae. Aenean vitae
+          mi quis enim tristique ornare. Nulla dapibus rhoncus augue a pulvinar.
+          Nunc in metus molestie, dictum ligula eget, pharetra nibh. Phasellus a
+          felis ultrices, feugiat ligula facilisis, facilisis libero. Aliquam mi
+          nisl, convallis at accumsan sed, pharetra mollis nisl. Class aptent
+          taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos. Donec gravida ligula a velit tempor, eget accumsan nisi
+          suscipit.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <p>
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+          posuere cubilia curae; Donec semper, enim id suscipit pellentesque,
+          nulla lorem consequat massa, quis ultricies lectus sem eget neque.
+          Nunc euismod mi ut mauris cursus dignissim. Nunc scelerisque, odio
+          eget dictum vulputate, ligula ex sollicitudin quam, in ornare arcu
+          diam id ligula. Donec imperdiet sem nec posuere gravida. Proin tortor
+          libero, cursus quis sapien vitae, bibendum lobortis enim. Aenean a
+          vulputate turpis, id dictum tellus. Suspendisse ut pulvinar arcu. Sed
+          egestas quam sem, ac elementum turpis tincidunt vitae. Morbi
+          condimentum nec nibh ut tincidunt. Sed nec tincidunt lacus, eget
+          tristique nisi. Cras tincidunt aliquam imperdiet. Phasellus eget dolor
+          id urna finibus ullamcorper.{" "}
+        </p>
       </div>
     </main>
-  )
+  );
 }
