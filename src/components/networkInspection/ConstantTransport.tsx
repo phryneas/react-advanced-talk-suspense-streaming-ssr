@@ -7,11 +7,7 @@ import {
   useRef,
   useState,
 } from "react";
-import {
-  ConstantTransportCbs,
-  TransportData,
-  TransportedData,
-} from "./networkInspection/types";
+import { ConstantTransportCbs, TransportData, TransportedData } from "./types";
 import { NetworkInspector } from "./NetworkInspector";
 
 function markFrom(source: "server" | "client") {

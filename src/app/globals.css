@@ -6,16 +6,57 @@ html {
     font-size: 36px;
 }
 
+body {
+    @apply bg-regolith text-nebula min-h-screen flex flex-col py-8 items-center
+}
+body::backdrop {
+    @apply bg-regolith
+}
+
+header {
+    @apply bg-nebula text-regolith mb-4 -mt-8 p-4 flex self-stretch justify-center flex-col 
+}
+
+header * {
+    @apply container 
+}
+
 main {
-    @apply container mx-auto
+    @apply grow container flex flex-col items-center justify-evenly
 }
 
 .box {
-   @apply rounded-xl p-4 my-4 mx-auto bg-nebula text-regolith
+   @apply rounded-xl p-4 my-4 
+}
+
+.dark {
+    @apply bg-nebula text-regolith
+}
+
+.light {
+    @apply bg-regolith text-nebula
 }
 
 .primary {
-    @apply bg-horizon text-nebula rounded-l p-2 m-2
+    @apply bg-horizon text-nebula
+}
+
+button {
+    @apply rounded-xl p-2 m-2 text-center
+}
+
+q {
+    @apply block font-serif bg-satellite  text-nebula rounded-xl p-2
+}
+q::before, q::after {
+    @apply font-bold
+}
+q em {
+    @apply text-nebula font-semibold italic
+}
+
+code.inline {
+    font-size: inherit;
 }
 
 em {

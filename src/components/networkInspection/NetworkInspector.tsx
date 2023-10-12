@@ -1,4 +1,4 @@
-import { TransportedData } from "./networkInspection/types";
+import { TransportedData } from "./types";
 
 export function NetworkInspector({ data }: { data: TransportedData[] }) {
   const min = data.reduce(

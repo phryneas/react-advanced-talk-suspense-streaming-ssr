@@ -1,6 +1,6 @@
 "use client";
 
-import { ConstantTransport } from "@/components/ConstantTransport";
+import { ConstantTransport } from "@/components/networkInspection/ConstantTransport";
 import { useNetworkInspectorLink } from "@/components/networkInspection/useNetworkInspectorLink";
 import {
   ApolloClient,
@@ -43,6 +43,7 @@ export default function Layout({ children }: { children: any }) {
       cache: new InMemoryCache(),
     });
   });
+
   return (
     <ApolloProvider client={ac}>
       <ConstantTransport ref={transportRef}>{children}</ConstantTransport>
