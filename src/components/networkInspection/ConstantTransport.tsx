@@ -8,7 +8,7 @@ import {
   useState,
 } from "react";
 import { ConstantTransportCbs, TransportData, TransportedData } from "./types";
-import { NetworkInspector } from "./NetworkInspector";
+import { NetworkInspector, NetworkInspectorContext } from "./NetworkInspector";
 
 function markFrom(source: "server" | "client") {
   return (item: TransportedData) => ({ source, ...item });
@@ -33,10 +33,12 @@ export const ConstantTransport = forwardRef<
     }
   }, []);
 
+  if (!ref || !("current" in ref)) {
+    throw new Error("need a mutable ref as argument");
+  }
+
   // useImperativeHandle doesn't flush on the server
-  // @ts-ignore
   if (typeof window === "undefined" && !ref.current) {
-    // @ts-ignore
     ref.current = {
       transportValue(value: any) {
         resolveNextPromise({
@@ -48,17 +50,22 @@ export const ConstantTransport = forwardRef<
       },
     };
   }
-  useImperativeHandle(ref, () => ({
-    transportValue(value) {
-      Promise.resolve().then(() =>
-        setData((data) => [...data, markFrom("client")(value)])
-      );
-    },
-  }));
+  // useImperativeHandle happens too late
+  if (typeof window !== "undefined" && !ref.current) {
+    ref.current = {
+      transportValue(value) {
+        Promise.resolve().then(() =>
+          setData((data) => [...data, markFrom("client")(value)])
+        );
+      },
+    };
+  }
 
   return (
     <>
-      <Suspense>{children}</Suspense>
+      <NetworkInspectorContext.Provider value={data}>
+        <Suspense>{children}</Suspense>
+      </NetworkInspectorContext.Provider>
       <div>
         <Suspense>
           <Stream
@@ -70,8 +77,6 @@ export const ConstantTransport = forwardRef<
           />
         </Suspense>
       </div>
-
-      <NetworkInspector data={data} />
     </>
   );
 });

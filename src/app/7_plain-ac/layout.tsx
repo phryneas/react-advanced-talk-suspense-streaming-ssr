@@ -16,7 +16,8 @@ import { useState } from "react";
 export const dynamic = "force-dynamic";
 
 function delay<T extends (...args: any) => any>(cb: T) {
-  return (...args: Parameters<T>) => setTimeout(() => cb(...args), 2500);
+  return (...args: Parameters<T>) =>
+    setTimeout(() => cb(...args), typeof window !== "undefined" ? 2500 : 1500);
 }
 
 export default function Layout({ children }: { children: any }) {

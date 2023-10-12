@@ -30,19 +30,23 @@ main {
 }
 
 .dark {
-    @apply bg-nebula text-regolith
+    @apply bg-nebula text-regolith border-regolith
 }
 
 .light {
-    @apply bg-regolith text-nebula
+    @apply bg-regolith text-nebula border-nebula
 }
 
 .primary {
-    @apply bg-horizon text-nebula
+    @apply bg-horizon text-nebula border-nebula
+}
+
+.alt {
+    @apply bg-satellite text-nebula border-nebula
 }
 
 button {
-    @apply rounded-xl p-2 m-2 text-center
+    @apply rounded-xl p-2 m-2 text-center border-solid
 }
 
 q {

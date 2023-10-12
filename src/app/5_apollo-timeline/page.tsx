@@ -40,7 +40,7 @@ export default function Page() {
               <code className="inline">useSuspenseQuery</code>
             </li>
             <li>
-              <em>Februray 2022</em>: we get the green light from the React Team
+              <em>Februray 2023</em>: we get the green light from the React Team
               to go forward supporting Suspense for Data Fetching
             </li>
           </Reveal>
