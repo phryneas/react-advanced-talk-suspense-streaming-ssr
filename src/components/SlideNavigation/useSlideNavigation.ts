@@ -1,5 +1,5 @@
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export function useSlideNavigation(slides: string[]) {
   const router = useRouter();
@@ -35,8 +35,11 @@ export function useSlideNavigation(slides: string[]) {
       document.removeEventListener("keydown", listener);
     };
   }, [slides, pathname, router]);
+  const lastSlideIndex = useRef(0);
   const currentSlideIndex = slides.indexOf(pathname);
   if (currentSlideIndex === -1) {
-    router.push(slides[0]);
+    router.push(slides[lastSlideIndex.current]);
+  } else {
+    lastSlideIndex.current = currentSlideIndex;
   }
 }

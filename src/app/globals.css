@@ -13,20 +13,28 @@ body::backdrop {
     @apply bg-regolith
 }
 
-header {
-    @apply bg-nebula text-regolith mb-4 -mt-8 p-4 flex self-stretch justify-center flex-col 
+header, footer {
+    @apply bg-nebula text-regolith  p-4 flex self-stretch justify-center flex-col 
 }
 
-header * {
-    @apply container 
+header {
+    @apply mb-4 -mt-8
+}
+
+footer {
+    @apply mt-4 -mb-8
 }
 
 main {
     @apply grow container flex flex-col items-center justify-evenly
 }
 
+img {
+    @apply object-contain
+}
+
 .box {
-   @apply rounded-xl p-4 my-4 
+   @apply rounded-xl p-4 /* my-4 */
 }
 
 .dark {
@@ -65,6 +73,10 @@ code.inline {
 
 em {
     @apply text-horizon not-italic
+}
+
+ul ul {
+    @apply  ml-6
 }
 
 h1 {

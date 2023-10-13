@@ -11,7 +11,7 @@ export default function Page() {
         </div>
       </header>
       <main className="relative">
-        <Image fill className="object-contain" src={image} alt="SSR fails" />
+        <Image fill src={image} alt="SSR fails" />
       </main>
     </>
   );

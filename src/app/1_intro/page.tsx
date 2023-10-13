@@ -9,13 +9,15 @@ export default function Page() {
         </h1>
       </header>
       <main>
-        <div>
-          <h3>using the example of Apollo Client &nbsp;</h3>
+        <div className="flex items-center">
+          <h3 className="inline">using the example of Apollo Client &nbsp;</h3>
           <span className="dark rounded-full inline-block p-3 ">
             <img src="apollo-symbol-regolith.svg" alt="" />
           </span>
         </div>
-        <h4>Lenz Weber-Tronic, Apollo GraphQL</h4>
+        <div className="self-end">
+          <h4>Lenz Weber-Tronic, Apollo GraphQL</h4>
+        </div>
       </main>
     </>
   );

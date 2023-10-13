@@ -12,7 +12,6 @@ export default function Page() {
         <Image
           src={diagram}
           fill
-          className="object-contain"
           alt="A timing diagram describing a 'worst case' scenario where data from the server is delayed due to another component re-suspending, resulting in a hydration mismatch."
         />
       </div>

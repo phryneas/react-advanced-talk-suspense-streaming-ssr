@@ -25,22 +25,27 @@ export default function Page() {
           Client Component
         </h3>
       </header>
-      <main className="flex-row items-stretch">
-        <Suspense
-          fallback={
-            <div className="box alt grow max-w-xs">
-              <p>loading query...</p>
-              <pre className="text-sm">{print(testQuery)}</pre>
-            </div>
-          }
-        >
-          <div className="box dark grow max-w-xs">
-            <SuspendedComponent />
-          </div>
-        </Suspense>
+      <main className="grow relative">
+        <div className="absolute left-0 top-0 right-0 bottom-0">
+          <div className="h-full w-full max-h-full grid grid-cols-2 grid-rows-1 items-stretch justify-stretch overflow-y-hidden gap-8">
+            <Suspense
+              fallback={
+                <div className="box alt flex flex-col justify-between">
+                  <p>loading query...</p>
+                  <br />
+                  <pre className="text-sm">{print(testQuery)}</pre>
+                </div>
+              }
+            >
+              <div className="box dark flex flex-col justify-between">
+                <SuspendedComponent />
+              </div>
+            </Suspense>
 
-        <div className="box dark flex flex-col">
-          <NetworkInspector />
+            <div className="box dark flex flex-col">
+              <NetworkInspector />
+            </div>
+          </div>
         </div>
       </main>
     </>
@@ -52,9 +57,7 @@ function SuspendedComponent() {
   const [fetching, startTransition] = useTransition();
   return (
     <>
-      <pre className="grow shrink text-sm overflow-scroll max-h-40">
-        {JSON.stringify(result.data, undefined, 2)}
-      </pre>
+      <pre className="text-sm">Query finished!</pre>
       <div className="flex flex-row">
         <button
           className="primary"

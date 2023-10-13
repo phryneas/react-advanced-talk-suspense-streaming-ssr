@@ -21,9 +21,7 @@ export default function Page() {
               <pre>
                 <code>
                   {`getDataFromTree(
-  <ApolloProvider client={client}>
-    <Page />
-  </ApolloProvider>
+  <ApolloProvider client={client}><Page /></ApolloProvider>
 )`}
                 </code>
               </pre>

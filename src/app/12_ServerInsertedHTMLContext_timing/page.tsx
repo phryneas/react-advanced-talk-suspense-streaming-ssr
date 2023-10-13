@@ -12,11 +12,13 @@ export default function Page() {
         </div>
       </header>
       <main>
-        <Image
-          src={code}
-          className="p-0"
-          alt="createInsertedHTMLStream source code"
-        />
+        <a href="https://github.com/vercel/next.js/blob/bbd79ac9977e03010e09ff90d933f2ec614b031f/packages/next/src/server/node-web-streams-helper.ts#L151">
+          <Image
+            src={code}
+            className="p-0"
+            alt="createInsertedHTMLStream source code"
+          />
+        </a>
         <p>
           TLDR: whenever React is done rendering
           <br />

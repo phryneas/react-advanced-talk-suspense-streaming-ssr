@@ -15,7 +15,6 @@ export default function Page() {
         <Image
           src={diagram}
           fill
-          className="object-contain"
           alt="A timing diagram describing a 'worst case' scenario where data changes on the client side, while not being transported by the server yet. Outdated server data will overwrite up-to-date client data."
         />
       </div>

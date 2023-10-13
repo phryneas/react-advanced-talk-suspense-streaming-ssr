@@ -39,7 +39,7 @@ export function NetworkInspector() {
     return ((item.timestamp - min) / duration) * 100;
   }
   return (
-    <div className="grow flex flex-col">
+    <div className="grow flex flex-col overflow-y-hidden">
       <h3>Network Monitor</h3>
       <svg
         viewBox={`-5 0 115 ${traces.length * laneHeight}`}
