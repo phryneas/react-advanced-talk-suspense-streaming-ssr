@@ -1,4 +1,5 @@
-import { Reveal } from "@/components/Reveal";
+import Image from "next/image";
+import image from "./SSR_fails.jpg";
 
 /* eslint-disable @next/next/no-img-element */
 export default function Page() {
@@ -9,8 +10,8 @@ export default function Page() {
           <h3>So let&apos;s try that.</h3>
         </div>
       </header>
-      <main>
-        <img src="SSR_fails.jpg" alt="" className="grow" />
+      <main className="relative">
+        <Image fill className="object-contain" src={image} alt="SSR fails" />
       </main>
     </>
   );
