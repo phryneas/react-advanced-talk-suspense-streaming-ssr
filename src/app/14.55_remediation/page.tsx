@@ -13,28 +13,29 @@ export default function Page() {
         <ul className="list-disc">
           <Reveal>
             <li>
-              When a query starts on the Server, we get that info to the Browser
-              as soon as possible.
+              While this is a Hydration Mismatch, it&apos;s also correct - there
+              is just newer data that should be rendered.
             </li>
             <li>
-              In the &quot;Browser Apollo Client&quot;, we{" "}
-              <em>simulate an ongoing request</em>.
+              After the hook renders on the Server, we{" "}
+              <em>Snapshot the Result</em>.
             </li>
             <li>
-              Apollo Client&apos;s <em>Query Deduplication</em> will prevent
-              this exact query from running again in the browser.
+              We <em>Transport the Snapshot</em> to the browser.
             </li>
             <li>
-              When a query finishes on the Server, we get that info to the
-              Browser as soon as possible.
+              We Render the hook, but <em>return the Snapshotted value</em>.
             </li>
             <li>
-              The <em>simulated request finishes</em>.
+              Then we <em>immediately rerender</em>.
             </li>
             <li>
-              We cannot do more - the details of{" "}
-              <i>&quot;as soon as possible&quot;</i> are{" "}
-              <em>out of our control</em>.
+              It would be nice if we could just tell React &quot;Hey, this might
+              have a Hydration Mismatch, that&apos;s okay&quot;!
+            </li>
+            <li>
+              Right now, we transport a lot of extra data just to make React
+              happy.
             </li>
           </Reveal>
         </ul>
