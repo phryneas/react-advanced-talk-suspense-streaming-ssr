@@ -29,7 +29,10 @@ export default function Page() {
             <li>
               Wait for all queries initialized by that pre-render to finish.
             </li>
-            <li>Repeat 3. until no more queries are initialized.</li>
+            <li>
+              Repeat 3. until no more queries are initialized. (This actually
+              happens internally.)
+            </li>
             <li>
               Pass Cache contents as Props into{" "}
               <code className="inline">App</code> component.
